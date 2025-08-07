@@ -13,7 +13,9 @@
 - Inside the folder `./react` live the React code.
 
 # Docker
-if you do not want install java/node you can execute this commnad `cd docker && docker-compose up -d`. (wait around 20 seconds) then go to `http://localhost:3000`.
+if you do not want install java/node you can execute this commnad `cd docker && docker-compose up -d`. (wait around 20 seconds) then go to `http://localhost:3000`.  
+
+The backend project is running on port 8080, make sure you do not have anything running there.
 
 
 ![alt text](image.png)
