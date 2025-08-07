@@ -1,0 +1,17 @@
+.task-form-container {
+    margin-bottom: 20px;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+}
+
+.task-form-input-container {
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.task-form-input {
+    height: 20px;
+    width: 100%;
+}

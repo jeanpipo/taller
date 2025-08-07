@@ -1,0 +1,17 @@
+.table-container {
+    height: 300px;
+    width: 900px;
+    overflow-y: auto;
+    
+}
+
+.table-column {
+    width: 160px;
+    height:35px;
+}
+
+.table-input {
+    width: 140px;
+    height:20px;
+    margin-right: 5px;
+}

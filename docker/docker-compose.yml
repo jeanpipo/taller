@@ -1,0 +1,12 @@
+version: '3'
+services:
+  fe:
+    image: icloudjeansosa/taller-ui
+    container_name: "taller-ui"
+    ports:
+      - 3000:3000
+  be:
+    image: icloudjeansosa/taller-be
+    container_name: "taller-be"
+    ports:
+      - 8080:8080
