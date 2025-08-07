@@ -14,10 +14,10 @@ function updateTask(task, setTasks) {
         .then(response => response.json())
         .then(data => {
             setTasks(prev => {
-                return {
-                    ...prev.filter(task.id !== data.id),
-                    ...data
-                };
+                return [
+                    ...prev.filter(p => p.id !== data.id),
+                    data
+                ];
             });
         })
         .catch((error) => {
@@ -45,13 +45,11 @@ function Table({ tasks, setTasks }) {
     const [editingId, setEditingId] = useState(null);
     const [editFields, setEditFields] = useState({});
 
-    const handleEditFieldChange = (id, field, value) => {
+    const handleEditFieldChange = (field, value) => {
         setEditFields(prev => ({
             ...prev,
             [field]: value
         }));
-
-        //t(JSON.stringify(editFields));
     };
 
     return (
@@ -76,7 +74,7 @@ function Table({ tasks, setTasks }) {
                                         className='table-input'
                                         type="text"
                                         value={editFields.name}
-                                        onChange={e => handleEditFieldChange(task.id, 'name', e.target.value)}
+                                        onChange={e => handleEditFieldChange('name', e.target.value)}
                                     />
                                 ) : (
                                     task.name
@@ -87,7 +85,7 @@ function Table({ tasks, setTasks }) {
                                     <input
                                         type="text"
                                         value={editFields.description}
-                                        onChange={e => handleEditFieldChange(task.id, 'description', e.target.value)}
+                                        onChange={e => handleEditFieldChange('description', e.target.value)}
                                         className='table-input'
                                     />
                                 ) : (
@@ -99,7 +97,7 @@ function Table({ tasks, setTasks }) {
                                     <input
                                         type="checkbox"
                                         checked={editFields.completed}
-                                        onChange={e => handleEditFieldChange(task.id, 'completed', e.target.checked)}
+                                        onChange={e => handleEditFieldChange('completed', e.target.checked)}
                                     />
                                 ) : (
                                     task.completed ? 'Yes' : 'No'
